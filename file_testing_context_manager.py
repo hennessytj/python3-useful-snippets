@@ -26,9 +26,6 @@ def create_test_file(path: str, contents: str):
         # find the actual exception which was raised
         exc = sys.exc_info()[0]
         raise exc(f"caught while attempting to create and write {path}")
-    finally:
-        if os.path.exists(path):
-            path.close()
 
     try:
         # gives caller context to complete task
